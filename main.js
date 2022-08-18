@@ -7,29 +7,54 @@ btnAnimales = document.getElementById("animales")
 btnPaises = document.getElementById('paises')
 displayData = document.getElementById("displayData")
 
-function displayArrayAnimales() {
+// // LLama funcion Animales
+// function displayArrayAnimales() {
+//     toHtml = ''
+//     for (var i = 0; i < animales.length; i++) {
+//         toHtml += `<li>${animales[i]}</li>`
+//     }
+//     displayData.innerHTML = toHtml
+// }
+// btnAnimales.addEventListener("click", () => displayArrayAnimales())
+
+// //Llamo funcion Autos
+// function displayArrayAutos() {
+//     toHtml2 = ''
+//     for (var i = 0; i < autos.length; i++) {
+//         toHtml2 += `<li>${autos[i]}</li>`
+//     }
+//     displayData.innerHTML = toHtml2
+// }
+// btnAutos.addEventListener("click", () => displayArrayAutos())
+
+// //Llamo funcion Paises
+// function displayArrayPaises() {
+//     toHtml3 = ''
+//     for (var i = 0; i < paises.length; i++) {
+//         toHtml3 += `<li>${paises[i]}</li>`
+//     }
+//     displayData.innerHTML = toHtml3
+// }
+// btnPaises.addEventListener("click", () => displayArrayPaises())
+
+
+function displayArray(id) {
+    console.log(id)
     toHtml = ''
-    for (var i = 0; i < animales.length; i++) {
-        toHtml += `<li>${animales[i]}</li>`
+    var arratAIterear;
+
+    if (id == "animales") {
+        arratAIterear = animales
+    }
+    else if (id == "autos") {
+        arratAIterear = autos
+    } else { arratAIterear = paises }
+
+    for (var i = 0; i < arratAIterear.length; i++) {
+        toHtml += `<li>${arratAIterear[i]}</li>`
     }
     displayData.innerHTML = toHtml
 }
-btnAnimales.addEventListener("click", () => displayArrayAnimales())
-
-function displayArrayAutos() {
-    toHtml2 = ''
-    for (var i = 0; i < autos.length; i++) {
-        toHtml2 += `<li>${autos[i]}</li>`
-    }
-    displayData.innerHTML = toHtml2
-}
-btnAutos.addEventListener("click", () => displayArrayAutos())
-
-function displayArrayPaises() {
-    toHtml3 = ''
-    for (var i = 0; i < paises.length; i++) {
-        toHtml3 += `<li>${paises[i]}</li>`
-    }
-    displayData.innerHTML = toHtml3
-}
-btnPaises.addEventListener("click", () => displayArrayPaises())
+btnAnimales.addEventListener("click", (event) => displayArray(event.target.id))
+btnPaises.addEventListener("click", (event) => displayArray(event.target.id))
+btnAutos.addEventListener("click", (event) => displayArray(event.target.id))
