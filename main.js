@@ -15,3 +15,12 @@ function displayArrayAnimales() {
     displayData.innerHTML = toHtml
 }
 btnAnimales.addEventListener("click", () => displayArrayAnimales())
+
+function displayArrayAutos() {
+    toHtml2 = ''
+    for (var i = 0; i < autos.length; i++) {
+        toHtml2 += `<li>${autos[i]}</li>`
+    }
+    displayData.innerHTML = toHtml2
+}
+btnAutos.addEventListener("click", () => displayArrayAutos())
