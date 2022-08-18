@@ -2,10 +2,14 @@ const animales = ["Perro", "Gato", "Iguana", "Caballo"]
 const autos = ["Toyota", "Fiat", "Audi", "Renault", "Ford"]
 const paises = ["Argentina", "Chile", "Uruguay", "Colombia", "Brasil", "Peru"]
 
-btnAutos = document.getElementById("autos")
-btnAnimales = document.getElementById("animales")
-btnPaises = document.getElementById('paises')
+// btnAutos = document.getElementById("autos")
+// btnAnimales = document.getElementById("animales")
+// btnPaises = document.getElementById('paises')
+
 displayData = document.getElementById("displayData")
+
+var botones = document.querySelectorAll("button")
+console.log(botones)
 
 // // LLama funcion Animales
 // function displayArrayAnimales() {
@@ -55,6 +59,14 @@ function displayArray(id) {
     }
     displayData.innerHTML = toHtml
 }
-btnAnimales.addEventListener("click", (event) => displayArray(event.target.id))
-btnPaises.addEventListener("click", (event) => displayArray(event.target.id))
-btnAutos.addEventListener("click", (event) => displayArray(event.target.id))
+
+// btnAnimales.addEventListener("click", (event) => displayArray(event.target.id))
+// btnPaises.addEventListener("click", (event) => displayArray(event.target.id))
+// btnAutos.addEventListener("click", (event) => displayArray(event.target.id))
+
+function botonesSelected(){
+    for(var i= 0; i<botones.length;i++){
+        botones[i].addEventListener('click',(event)  => displayArray(event.target.id))
+    }
+}
+botonesSelected()
