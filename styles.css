@@ -1,4 +1,17 @@
-body{
+button{
+    width: 10rem;
+}
+ul{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.div1{
+    display: flex;
+    justify-content: center;
+}
+.div2{
     display: flex;
     justify-content: center;
 }

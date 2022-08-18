@@ -24,3 +24,12 @@ function displayArrayAutos() {
     displayData.innerHTML = toHtml2
 }
 btnAutos.addEventListener("click", () => displayArrayAutos())
+
+function displayArrayPaises() {
+    toHtml3 = ''
+    for (var i = 0; i < paises.length; i++) {
+        toHtml3 += `<li>${paises[i]}</li>`
+    }
+    displayData.innerHTML = toHtml3
+}
+btnPaises.addEventListener("click", () => displayArrayPaises())
